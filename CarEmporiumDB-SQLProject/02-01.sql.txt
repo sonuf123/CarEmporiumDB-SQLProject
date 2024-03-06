@@ -1,0 +1,21 @@
+-- Find the least and most expensive car sold by each employee this year
+
+SELECT 
+    emp.employeeId, 
+    emp.firstName, 
+    emp.lastName, 
+    EXTRACT(YEAR FROM sls.soldDate) AS SaleYear,
+    MIN(sls.salesAmount) AS MinSalesAmount, 
+    MAX(sls.salesAmount) AS MaxSalesAmount
+FROM 
+    sales sls
+INNER JOIN 
+    employee emp 
+	ON sls.employeeId = emp.employeeId
+WHERE 
+   sls.soldDate >= DATE_TRUNC('year', CURRENT_DATE) - INTERVAL '1 year'
+GROUP BY 
+    emp.employeeId, 
+    emp.firstName, 
+    emp.lastName,
+    SaleYear;
