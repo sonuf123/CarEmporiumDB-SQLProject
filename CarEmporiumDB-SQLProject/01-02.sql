@@ -16,3 +16,8 @@ emp.startdate,
 	   emp.title = 'Sales Person'
 	   AND 
 	   sal.salesamount IS NULL;
+
+employee_name|employeeid|employee_lastname|job_role    |startdate              |salesid|salesamount|employeeid|
+-------------+----------+-----------------+------------+-----------------------+-------+-----------+----------+
+Carla        |       104|Owen             |Sales Person|2022-08-18 15:58:55.000|       |           |          |
+Bob          |       103|Smith            |Sales Person|2021-12-02 08:12:53.000|       |           |          |
